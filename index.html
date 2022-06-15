@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple word count web component</title>
+</head>
+<script>
+    function onCounterHandler(event) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        //event.preventDefault();
+    }
+</script>
+<body>
+    <inc-dec-counter-btn id="xyz" counter="onCounterHandler(event)"></inc-dec-counter-btn>
+    <p id="result"></p>
+    <script src="main.js"></script>
+</body>
+    <script>
+        xyz.addEventListener("counter", function(event) {
+            document.getElementById('result').textContent = JSON.stringify(event.detail.total);
+        });
+    </script>
+
+</html>
